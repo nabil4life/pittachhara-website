@@ -31,7 +31,8 @@ SLOTS_BUNDLE_UUID = "f78573f1-64cd-4f59-8544-b39204a866c1"
 # kind 'video' → set youtubeUrl:'<url>'
 
 PAGE1_OVERRIDES = {
-    "1.1":  {"real": "images/Page1/1.1_hero_drone_video.mp4"},  # video replaces static
+    "1.1":  {"real": "images/Page1/1.1_hero_drone_video.mp4"},   # video replaces static
+    "1.5":  {"real": "images/Page1/1.5_library.png"},            # NEW: real library photo (was medical-centre stand-in)
     "1.10": {"real": "images/Page1/1.10_founder_russel_v2.jpg"}, # new portrait
 }
 
@@ -54,7 +55,7 @@ PAGE3_CONFIG = {
     "3.2": {"real": "images/Page3/3.2_wildlife_research.jpg"},
     "3.3": {"real": "images/Page3/3.3_free_health.jpg"},
     "3.4": {"real": "images/Page3/3.4_mhm.jpg"},
-    # 3.5 set to MISSING via patch_page3_hero.py (Russel to supply library photo)
+    "3.5": {"real": "images/Page3/3.5_library.png"},  # NEW: Russel supplied (June 2026)
     "3.6": {"real": "images/Page3/3.6_wildlife_rescue.jpg"},
     # 3.7 Native Plant Nursery — MISSING
     "3.8": {"real": "images/Page3/3.8_womens_empowerment.jpg"},
@@ -89,7 +90,9 @@ PAGE5_CONFIG = {
 }
 
 PAGE6_CONFIG = {
-    # 6.1, 6.2, 6.3, 6.5 — AWAITING ARCHITECT RENDERS
+    # 6.1, 6.5 — still awaiting architect renders
+    "6.2": {"real": "images/Page6/6.2_cottage_render.jpg"},     # NEW: architect render from Russel
+    "6.3": {"real": "images/Page6/6.3_research_centre.jpg"},    # NEW: architect render from Russel
     "6.4": {"real": "images/Page6/6.4_forest_walks_standin.jpg"},
     "6.6": {"real": "images/Page6/6.6_cultural.jpg"},
 }
