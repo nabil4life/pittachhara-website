@@ -38,7 +38,7 @@ PAGE1_OVERRIDES = {
 
 PAGE2_CONFIG = {
     "2.1": {"real": "images/Page2/2.1_hero_about.mp4"},  # video hero
-    "2.2": {"real": "images/Page2/2.2_forest_landscape.jpg"},
+    "2.2": {"real": "images/Page2/2.2_forest_landscape_v2.jpg"},  # Russel replacement June 2026
     "2.3": {"realLogos": "auto:images/Page2/2.3_trustee_*"},   # 13 trustees
     "2.4": {"real": "images/Page2/2.4_map.jpg"},
     # 2.5 MDPI paper — MISSING
@@ -54,7 +54,7 @@ PAGE3_CONFIG = {
     # 3.7 Native Plant Nursery — MISSING (Russel to supply)
     "3.2": {"real": "images/Page3/3.2_wildlife_research.jpg"},
     "3.3": {"real": "images/Page3/3.3_free_health.jpg"},
-    "3.4": {"real": "images/Page3/3.4_mhm.jpg"},
+    "3.4": {"real": "images/Page3/3.4_mhm_v2.jpg"},  # Russel replacement June 2026
     "3.5": {"real": "images/Page3/3.5_library.png"},  # NEW: Russel supplied (June 2026)
     "3.6": {"real": "images/Page3/3.6_wildlife_rescue.jpg"},
     # 3.7 Native Plant Nursery — MISSING
@@ -74,7 +74,7 @@ PAGE4_CONFIG = {
     "4.9": {"real": "images/Page4/4.9_black_rat.jpg"},
     # 4.10 Birds — MISSING
     # 4.11 Reptiles & Amphibians — MISSING
-    "4.12": {"real": "images/Page4/4.12_camera_trap.jpg"},
+    "4.12": {"real": "images/Page4/4.12_camera_trap_v2.jpg"},  # Russel replacement June 2026
     # 4.13 MDPI paper — MISSING
     "4.14": {"realLogos": "auto:images/Page4/4.14_logo_*"},
 }
@@ -84,7 +84,7 @@ PAGE5_CONFIG = {
     # 5.2 Assisted Natural Regeneration — MISSING
     # 5.3 Smallholder agroforestry — MISSING
     # 5.4 Wildlife corridor — MISSING
-    "5.5": {"real": "images/Page5/5.5_stream.jpg"},
+    "5.5": {"real": "images/Page5/5.5_stream_v2.jpg"},  # Russel replacement June 2026
     "5.6": {"real": "images/Page5/5.6_tribal_community.jpg"},
     "5.7": {"real": "images/Page5/5.7_forest_dept.jpg"},
 }
