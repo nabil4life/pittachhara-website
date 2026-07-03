@@ -1,6 +1,7 @@
 _tools/
 _incoming/
 index.original.html
+*.bak.html
 public/
 src/
 .DS_Store

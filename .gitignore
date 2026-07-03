@@ -1,8 +1,9 @@
 # Raw video masters / working drop folder (too large for GitHub, not needed live)
 _incoming/
 
-# Local backup of the original Claude Design export
+# Local backups of the built export (original, pre-round, pre-logo, etc.)
 index.original.html
+*.bak.html
 
 # OS noise
 .DS_Store
