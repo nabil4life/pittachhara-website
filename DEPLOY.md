@@ -59,14 +59,48 @@ Vercel auto-rebuilds and the live URL updates in under a minute.
 
 ---
 
-## Custom domain at launch (pittachhara.org)
+## Custom domain — LIVE as of 2026-10-27 (pittachhara.org)
 
-When ready to go live:
-1. Vercel project → **Settings → Domains** → add `pittachhara.org` (and `www`).
-2. Vercel shows you DNS records (an A record / CNAME).
-3. **Russel** updates those records at wherever pittachhara.org's DNS is managed.
-   DNS is his to control, not ours.
-4. Once DNS propagates (minutes to a few hours), the site is live on the real domain.
+The domain is registered at **Namecheap** (BasicDNS) and now points at the current
+Vercel project `prj_MReLrOn97m3tHsvukYcmNkjIsc6O`. Both `pittachhara.org` and
+`www.pittachhara.org` are verified on that project; `www` 308-redirects to the apex.
+
+### DNS records as currently set at Namecheap (Advanced DNS → Host Records)
+
+| Type  | Host               | Value                                                    | Note |
+|-------|--------------------|----------------------------------------------------------|------|
+| A     | @                  | `216.198.79.1`                                           | Vercel IP. Unchanged during cutover — was already pointing at Vercel. |
+| CNAME | www                | `cname.vercel-dns.com.`                                 | **Changed** during cutover (see rollback). |
+| TXT   | _vercel            | `vc-domain-verify=pittachhara.org,24cd4c076289bec4b669` | Added — apex ownership verification. |
+| TXT   | _vercel            | `vc-domain-verify=www.pittachhara.org,5f02e5e04e9059f6cafd` | Added — www ownership verification. |
+| TXT   | default._domainkey | `v=DKIM1;k=rsa;p=…` (DKIM)                               | **Private Email — do not touch.** |
+| MX / mail | (Private Email)| Namecheap Private Email records                          | **Do not touch — breaks email.** |
+
+Vercel recommends switching the apex A record to `76.76.21.21`, but `216.198.79.1`
+is a valid Vercel IP and reads `misconfigured: false`, so it was left as-is. No action needed.
+
+### Rollback — to revert the domain to the OLD host/project
+
+Before the cutover the domain was attached to a **different/older Vercel project**, and
+the `www` CNAME pointed at that project's edge. That old project still exists and its last
+deployment is frozen, so it is the rollback target. Vercel only allows a domain on one
+project at a time, so reverting means moving it back.
+
+**Old `www` CNAME value (restore this to revert www):**
+
+```
+562f9d85ac276261.vercel-dns-017.com.
+```
+
+To revert fully:
+1. In the OLD Vercel project → Settings → Domains → re-add `pittachhara.org` and `www`
+   (it will show a TXT challenge; add it at Namecheap and verify).
+2. At Namecheap → change the `www` CNAME back to `562f9d85ac276261.vercel-dns-017.com.`
+   (the apex A record `216.198.79.1` can stay — it is generic Vercel and both projects use it).
+3. The two `_vercel` TXT records above are harmless and can stay or be removed.
+
+Nothing was deleted: the GitHub repo, the current Vercel project, and the old Vercel project
+all remain intact, so you can switch either direction at any time.
 
 ---
 
